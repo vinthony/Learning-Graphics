@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA336BAB1B983C2A0038B1C3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA336BAA1B983C2A0038B1C3 /* main.cpp */; };
+		AA336BAB1B983C2A0038B1C3 /* triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA336BAA1B983C2A0038B1C3 /* triangle.cpp */; };
+		AA336BB21B983E2E0038B1C3 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA336BB11B983E2E0038B1C3 /* OpenGL.framework */; };
+		AA336BB41B983E350038B1C3 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA336BB31B983E350038B1C3 /* GLUT.framework */; };
+		AA336BB61B983F280038B1C3 /* libGLEW.1.12.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA336BB51B983F280038B1C3 /* libGLEW.1.12.0.dylib */; };
+		AA336BB81B9840900038B1C3 /* libGLTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA336BB71B9840900038B1C3 /* libGLTools.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +28,11 @@
 
 /* Begin PBXFileReference section */
 		AA336BA71B983C2A0038B1C3 /* Graphics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Graphics; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA336BAA1B983C2A0038B1C3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AA336BAA1B983C2A0038B1C3 /* triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = triangle.cpp; sourceTree = "<group>"; };
+		AA336BB11B983E2E0038B1C3 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		AA336BB31B983E350038B1C3 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		AA336BB51B983F280038B1C3 /* libGLEW.1.12.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.12.0.dylib; path = ../../../../../usr/local/Cellar/glew/1.12.0/lib/libGLEW.1.12.0.dylib; sourceTree = "<group>"; };
+		AA336BB71B9840900038B1C3 /* libGLTools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGLTools.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +40,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA336BB61B983F280038B1C3 /* libGLEW.1.12.0.dylib in Frameworks */,
+				AA336BB41B983E350038B1C3 /* GLUT.framework in Frameworks */,
+				AA336BB81B9840900038B1C3 /* libGLTools.a in Frameworks */,
+				AA336BB21B983E2E0038B1C3 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +53,10 @@
 		AA336B9E1B983C2A0038B1C3 = {
 			isa = PBXGroup;
 			children = (
+				AA336BB71B9840900038B1C3 /* libGLTools.a */,
+				AA336BB51B983F280038B1C3 /* libGLEW.1.12.0.dylib */,
+				AA336BB31B983E350038B1C3 /* GLUT.framework */,
+				AA336BB11B983E2E0038B1C3 /* OpenGL.framework */,
 				AA336BA91B983C2A0038B1C3 /* Graphics */,
 				AA336BA81B983C2A0038B1C3 /* Products */,
 			);
@@ -57,7 +73,7 @@
 		AA336BA91B983C2A0038B1C3 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				AA336BAA1B983C2A0038B1C3 /* main.cpp */,
+				AA336BAA1B983C2A0038B1C3 /* triangle.cpp */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -118,7 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA336BAB1B983C2A0038B1C3 /* main.cpp in Sources */,
+				AA336BAB1B983C2A0038B1C3 /* triangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +221,18 @@
 		AA336BAF1B983C2A0038B1C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(GLTOOLS_INCLUDE)",
+					/usr/local/Cellar/glew/1.12.0/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glew/1.12.0/lib,
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = "-lGLEW";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -212,6 +240,18 @@
 		AA336BB01B983C2A0038B1C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(GLTOOLS_INCLUDE)",
+					/usr/local/Cellar/glew/1.12.0/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glew/1.12.0/lib,
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = "-lGLEW";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
