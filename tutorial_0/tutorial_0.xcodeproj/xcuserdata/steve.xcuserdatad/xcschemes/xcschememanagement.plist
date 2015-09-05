@@ -4,25 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Graphics.xcscheme</key>
+		<key>tutorial_0.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>t1.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>AA336BA61B983C2A0038B1C3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AA336BEC1B9AA38A0038B1C3</key>
+		<key>AA336BD71B9AA3160038B1C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

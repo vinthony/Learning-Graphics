@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AA336BA61B983C2A0038B1C3"
-               BuildableName = "t1"
-               BlueprintName = "t1"
-               ReferencedContainer = "container:Graphics.xcodeproj">
+               BlueprintIdentifier = "AA336BD71B9AA3160038B1C3"
+               BuildableName = "tutorial_0"
+               BlueprintName = "tutorial_0"
+               ReferencedContainer = "container:tutorial_0.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AA336BA61B983C2A0038B1C3"
-            BuildableName = "t1"
-            BlueprintName = "t1"
-            ReferencedContainer = "container:Graphics.xcodeproj">
+            BlueprintIdentifier = "AA336BD71B9AA3160038B1C3"
+            BuildableName = "tutorial_0"
+            BlueprintName = "tutorial_0"
+            ReferencedContainer = "container:tutorial_0.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,10 +52,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AA336BA61B983C2A0038B1C3"
-            BuildableName = "t1"
-            BlueprintName = "t1"
-            ReferencedContainer = "container:Graphics.xcodeproj">
+            BlueprintIdentifier = "AA336BD71B9AA3160038B1C3"
+            BuildableName = "tutorial_0"
+            BlueprintName = "tutorial_0"
+            ReferencedContainer = "container:tutorial_0.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,10 +71,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AA336BA61B983C2A0038B1C3"
-            BuildableName = "t1"
-            BlueprintName = "t1"
-            ReferencedContainer = "container:Graphics.xcodeproj">
+            BlueprintIdentifier = "AA336BD71B9AA3160038B1C3"
+            BuildableName = "tutorial_0"
+            BlueprintName = "tutorial_0"
+            ReferencedContainer = "container:tutorial_0.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
