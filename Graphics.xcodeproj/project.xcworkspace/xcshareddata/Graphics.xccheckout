@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B9A6F5B2-5C71-46C8-B202-DE290A2A29B9</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Graphics</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>29FE58786DDBD47AA40A010B395261110D3B31AB</key>
 		<string>https://github.com/vinthony/Learning-Graphics.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Graphics.xcodeproj/project.xcworkspace</string>
+	<string>Graphics.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>29FE58786DDBD47AA40A010B395261110D3B31AB</key>
