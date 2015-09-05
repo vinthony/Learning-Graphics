@@ -76,7 +76,7 @@
 		AA336B9E1B983C2A0038B1C3 = {
 			isa = PBXGroup;
 			children = (
-				AA336BCE1B9AA1C50038B1C3 /* math_3d.h */,
+				AAB37A541B9AAA230085F48F /* lib */,
 				AA336BB51B983F280038B1C3 /* libGLEW.1.12.0.dylib */,
 				AA336BB31B983E350038B1C3 /* GLUT.framework */,
 				AA336BB11B983E2E0038B1C3 /* OpenGL.framework */,
@@ -111,6 +111,14 @@
 			);
 			name = t2;
 			path = t1;
+			sourceTree = "<group>";
+		};
+		AAB37A541B9AAA230085F48F /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				AA336BCE1B9AA1C50038B1C3 /* math_3d.h */,
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
