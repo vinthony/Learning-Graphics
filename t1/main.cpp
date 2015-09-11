@@ -7,8 +7,7 @@
 
 
 void render(){
-    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    
     Vector3f Vertices[1];
     Vertices[0] = Vector3f(0.0f, 0.0f, 0.0f);
     GLuint VBO;
@@ -19,9 +18,11 @@ void render(){
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
     glDrawArrays(GL_POINTS, 0, 1);
-    glEnableVertexAttribArray(0);
+    glDisableVertexAttribArray(0);
+    
+   
     glutSwapBuffers();
-    glFlush();
+    
 }
 
 int main (int argc,char ** argv)
@@ -38,6 +39,7 @@ int main (int argc,char ** argv)
         return 1;
     }
     glutDisplayFunc(render);
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glutMainLoop();
     
     

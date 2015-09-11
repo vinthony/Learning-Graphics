@@ -12,7 +12,17 @@
 		<key>t1.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>t3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>t4.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -23,6 +33,16 @@
 			<true/>
 		</dict>
 		<key>AA336BEC1B9AA38A0038B1C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AAB37A581B9AABB60085F48F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AADA5CEB1BA1797700C1377F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
