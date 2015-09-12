@@ -27,6 +27,7 @@
 		AADA5D051BA4830F00C1377F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA336BB11B983E2E0038B1C3 /* OpenGL.framework */; };
 		AADA5D061BA4832400C1377F /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AADA5CF81BA2C68F00C1377F /* libglfw3.3.1.dylib */; };
 		AADA5D071BA4833800C1377F /* libGLEW.1.12.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA336BB51B983F280038B1C3 /* libGLEW.1.12.0.dylib */; };
+		AADA5D0D1BA4919700C1377F /* initShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AADA5D0B1BA48E2C00C1377F /* initShader.cpp */; };
 		AAFFFCC61B9AA8E100B304AF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFFFCC51B9AA8E100B304AF /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,8 @@
 		AADA5D001BA4830600C1377F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		AADA5D081BA48B4E00C1377F /* vs.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = vs.vs; sourceTree = "<group>"; };
 		AADA5D091BA48BB800C1377F /* fs.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fs.fs; sourceTree = "<group>"; };
+		AADA5D0B1BA48E2C00C1377F /* initShader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = initShader.cpp; sourceTree = "<group>"; };
+		AADA5D0C1BA48E2C00C1377F /* initShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = initShader.h; sourceTree = "<group>"; };
 		AAFFFCC51B9AA8E100B304AF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = t2/main.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -157,6 +160,7 @@
 		AA336B9E1B983C2A0038B1C3 = {
 			isa = PBXGroup;
 			children = (
+				AADA5D0A1BA48DF800C1377F /* common */,
 				AADA5CF81BA2C68F00C1377F /* libglfw3.3.1.dylib */,
 				AA336BB51B983F280038B1C3 /* libGLEW.1.12.0.dylib */,
 				AA336BB31B983E350038B1C3 /* GLUT.framework */,
@@ -226,6 +230,15 @@
 				AADA5D091BA48BB800C1377F /* fs.fs */,
 			);
 			path = t5;
+			sourceTree = "<group>";
+		};
+		AADA5D0A1BA48DF800C1377F /* common */ = {
+			isa = PBXGroup;
+			children = (
+				AADA5D0B1BA48E2C00C1377F /* initShader.cpp */,
+				AADA5D0C1BA48E2C00C1377F /* initShader.h */,
+			);
+			name = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AADA5D011BA4830600C1377F /* main.cpp in Sources */,
+				AADA5D0D1BA4919700C1377F /* initShader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +461,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(GLEW_INCLUDE)",
 					/Users/steve/Documents/graphicDependence/Include,
+					/Users/steve/Documents/openGL/Graphics,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/Cellar/glew/1.12.0/lib,
@@ -494,6 +509,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(GLEW_INCLUDE)",
 					/Users/steve/Documents/graphicDependence/Include,
+					/Users/steve/Documents/openGL/Graphics,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/Cellar/glew/1.12.0/lib,
@@ -653,7 +669,7 @@
 		AADA5D031BA4830600C1377F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -670,7 +686,7 @@
 		AADA5D041BA4830600C1377F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw3/3.1.1/lib,
