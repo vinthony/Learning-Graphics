@@ -1,42 +1,26 @@
 //
 //  main.cpp
-//  t4
+//  t5
 //
-//  Created by Steve on 10/09/2015.
+//  Created by Steve on 12/09/2015.
 //  Copyright (c) 2015 Steve. All rights reserved.
 //
 
-
 #include <iostream>
-#include <GL/glew.h>
-//#include <GLUT/GLUT.h>
-
+#include <gl/glew.h>
 #include <GLFW/glfw3.h>
-#include <OpenGL/gl.h>
 #include <fstream>
-//#include <math_3d.h>
-//#include <ogldev_util.h>
-
-
-using namespace std;
+#include <math.h>
+using namespace::std;
 
 GLuint VBO;
-int MAX_PATH = 1024;
-static void error_callback(int error, const char* description)
-{
-    fputs(description, stderr);
-}
-static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
-{
-    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, GL_TRUE);
-}
+GLuint gScaleLocation;
 
 bool ReadFile(const char* pFileName, string& outFile)
 {
     
     ifstream f;
-    
+    printf("%s\n",pFileName);
     f.open(pFileName);
     
     bool ret = false;
@@ -58,26 +42,22 @@ bool ReadFile(const char* pFileName, string& outFile)
     
     return ret;
 }
-const char* vsFileName = "/Users/steve/Documents/openGL/Graphics/t4/vertexshader.vs";
-const char* fsFileName = "/Users/steve/Documents/openGL/Graphics/t4/fragmentshader.fs";
+static const GLfloat g_vertex_buffer_data [] = {
+    -1.0f, -1.0f, 0.0f,
+    1.0f, -1.0f , 0.0f,
+    0.0f , 1.0f,  0.0f
+};
 
-
-void render(){
+static void CreateVertexBuffer(){
     
-    glClear(GL_COLOR_BUFFER_BIT);
-    glEnableVertexAttribArray(0);
-   
+    
+    glGenBuffers(1 , &VBO);
     glBindBuffer(GL_ARRAY_BUFFER,VBO);
-       glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-    
-    glDrawArrays(GL_TRIANGLES, 0, 3);
-    
-    glDisableVertexAttribArray(0);
-    
-    glFlush();
-//    glutSwapBuffers();
-    
+    glBufferData(GL_ARRAY_BUFFER,sizeof(g_vertex_buffer_data),g_vertex_buffer_data,GL_STATIC_DRAW);
 }
+
+const char* vsFileName = "/Users/steve/Documents/openGL/Graphics/t5/vs.vs";
+const char* fsFileName = "/Users/steve/Documents/openGL/Graphics/t5/fs.fs";
 
 void ShaderManager(GLuint ShaderProgram,const char* fname,GLenum ShaderType){
     GLuint ShaderObj = glCreateShader(ShaderType);
@@ -101,20 +81,6 @@ void ShaderManager(GLuint ShaderProgram,const char* fname,GLenum ShaderType){
     }
     glAttachShader(ShaderProgram,ShaderObj);
 }
-static const GLfloat g_vertex_buffer_data [] = {
-    -1.0f, -1.0f, 0.0f,
-    1.0f, -1.0f , 0.0f,
-    0.0f , 1.0f,  0.0f
-};
-
-static void CreateVertexBuffer(){
-    
- 
-    glGenBuffers(1 , &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER,VBO);
-    glBufferData(GL_ARRAY_BUFFER,sizeof(g_vertex_buffer_data),g_vertex_buffer_data,GL_STATIC_DRAW);
-   }
-
 static void CompileShaders(){
     GLuint ShaderProgram = glCreateProgram();
     
@@ -156,63 +122,71 @@ static void CompileShaders(){
     glUseProgram(ShaderProgram);
 }
 
-
-int main(int argc, char * argv[]) {
+static void error_callback(int error, const char* description)
+{
+    fputs(description, stderr);
+}
+static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, GL_TRUE);
+}
+static void render(){
+    glClear(GL_COLOR_BUFFER_BIT);
     
+    static float Scale = 0.0f;
+    
+    Scale += 0.001f;
+    
+    glUniform1f(gScaleLocation, sinf(Scale));
+    
+    glEnableVertexAttribArray(0);
+    
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    
+    glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, 0, 0);
+    
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+    
+    glDisableVertexAttribArray(0);
+    
+    glFlush();
+}
+int main(int argc,  char * argv[]) {
+    // insert code here...
     GLFWwindow* window;
     glfwSetErrorCallback(error_callback);
-    if (!glfwInit())
-        exit(EXIT_FAILURE);
+    if(!glfwInit()) exit(EXIT_FAILURE);
+    
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     
-    
-    window = glfwCreateWindow(640, 480, "Simple example", NULL, NULL);
-    if (!window)
-    {
+    window = glfwCreateWindow(640, 480, "T5", NULL, NULL);
+    if(!window){
         glfwTerminate();
         exit(EXIT_FAILURE);
     }
-   
     glfwMakeContextCurrent(window);
-    
     glfwSwapInterval(1);
-   
     glfwSetKeyCallback(window, key_callback);
-   
-
-//    glutInit(&argc, argv);
-//    glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGBA);
-//    glutInitWindowPosition(100, 100);
-//    glutInitWindowSize(1024, 768);
-//    glutCreateWindow("T4");
-//    glutDisplayFunc(render);
-    
-//    printf("%s\n",argv[0]);
     glewExperimental = GL_TRUE;
-    GLenum res = glewInit();
+    GLenum res =   glewInit();
     if(res != GLEW_OK){
-        fprintf(stderr, "error:'%s'\n",glewGetErrorString(res));
+        fprintf(stderr, "errors:'%s'\n",glewGetErrorString(res));
         return 1;
     }
     GLuint vaoId = 0;
-    glGenVertexArrays(1, &vaoId);
+    glGenVertexArrays(1,&vaoId);
     glBindVertexArray(vaoId);
-//    GLuint VertexArrayId;
-//    glGenVertexArrays(0,&VertexArrayId);
-//    glBindVertexArray(VertexArrayId);
-
-    printf("GL version: %s\n", glGetString(GL_VERSION));
-//    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    std::cout << "init end\n";
     
     CreateVertexBuffer();
-    
     CompileShaders();
     render();
     
-    while (!glfwWindowShouldClose(window))
+    while(!glfwWindowShouldClose(window))
     {
         float ratio;
         int width, height;
@@ -225,10 +199,9 @@ int main(int argc, char * argv[]) {
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-   
-//    glutMainLoop();
+    
     glfwDestroyWindow(window);
     glfwTerminate();
     return 0;
-    
+
 }
