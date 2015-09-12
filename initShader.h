@@ -15,5 +15,5 @@
 
 void CompileShaders(const char* vsFileName,const char* fsFileName);
 //void ShaderManager(GLuint ShaderProgram,const char* fname,GLenum ShaderType);
-
+//const char* file_DIR = "/Users/steve/Documents/openGL/Graphics/";
 #endif /* defined(__Graphics__initShader__) */

@@ -29,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>t6.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -53,6 +58,11 @@
 			<true/>
 		</dict>
 		<key>AADA5CFD1BA4830600C1377F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AADA5D111BA4936200C1377F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

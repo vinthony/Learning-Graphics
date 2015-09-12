@@ -28,6 +28,11 @@
 		AADA5D061BA4832400C1377F /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AADA5CF81BA2C68F00C1377F /* libglfw3.3.1.dylib */; };
 		AADA5D071BA4833800C1377F /* libGLEW.1.12.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA336BB51B983F280038B1C3 /* libGLEW.1.12.0.dylib */; };
 		AADA5D0D1BA4919700C1377F /* initShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AADA5D0B1BA48E2C00C1377F /* initShader.cpp */; };
+		AADA5D151BA4936200C1377F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AADA5D141BA4936200C1377F /* main.cpp */; };
+		AADA5D191BA4936D00C1377F /* initShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AADA5D0B1BA48E2C00C1377F /* initShader.cpp */; };
+		AADA5D1A1BA4937600C1377F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA336BB11B983E2E0038B1C3 /* OpenGL.framework */; };
+		AADA5D1B1BA4938600C1377F /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AADA5CF81BA2C68F00C1377F /* libglfw3.3.1.dylib */; };
+		AADA5D1C1BA4939600C1377F /* libGLEW.1.12.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA336BB51B983F280038B1C3 /* libGLEW.1.12.0.dylib */; };
 		AAFFFCC61B9AA8E100B304AF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAFFFCC51B9AA8E100B304AF /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +82,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		AADA5D101BA4936200C1377F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +113,10 @@
 		AADA5D091BA48BB800C1377F /* fs.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fs.fs; sourceTree = "<group>"; };
 		AADA5D0B1BA48E2C00C1377F /* initShader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = initShader.cpp; sourceTree = "<group>"; };
 		AADA5D0C1BA48E2C00C1377F /* initShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = initShader.h; sourceTree = "<group>"; };
+		AADA5D121BA4936200C1377F /* t6 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = t6; sourceTree = BUILT_PRODUCTS_DIR; };
+		AADA5D141BA4936200C1377F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AADA5D1D1BA497DD00C1377F /* vs.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = vs.vs; sourceTree = "<group>"; };
+		AADA5D1E1BA497E600C1377F /* fs.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fs.fs; sourceTree = "<group>"; };
 		AAFFFCC51B9AA8E100B304AF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = t2/main.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -154,6 +172,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AADA5D0F1BA4936200C1377F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AADA5D1C1BA4939600C1377F /* libGLEW.1.12.0.dylib in Frameworks */,
+				AADA5D1B1BA4938600C1377F /* libglfw3.3.1.dylib in Frameworks */,
+				AADA5D1A1BA4937600C1377F /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -170,6 +198,7 @@
 				AAB37A5A1B9AABB60085F48F /* t3 */,
 				AADA5CED1BA1797700C1377F /* t4 */,
 				AADA5CFF1BA4830600C1377F /* t5 */,
+				AADA5D131BA4936200C1377F /* t6 */,
 				AA336BA81B983C2A0038B1C3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -182,6 +211,7 @@
 				AAB37A591B9AABB60085F48F /* t3 */,
 				AADA5CEC1BA1797700C1377F /* t4 */,
 				AADA5CFE1BA4830600C1377F /* t5 */,
+				AADA5D121BA4936200C1377F /* t6 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +269,16 @@
 				AADA5D0C1BA48E2C00C1377F /* initShader.h */,
 			);
 			name = common;
+			sourceTree = "<group>";
+		};
+		AADA5D131BA4936200C1377F /* t6 */ = {
+			isa = PBXGroup;
+			children = (
+				AADA5D141BA4936200C1377F /* main.cpp */,
+				AADA5D1D1BA497DD00C1377F /* vs.vs */,
+				AADA5D1E1BA497E600C1377F /* fs.fs */,
+			);
+			path = t6;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +369,23 @@
 			productReference = AADA5CFE1BA4830600C1377F /* t5 */;
 			productType = "com.apple.product-type.tool";
 		};
+		AADA5D111BA4936200C1377F /* t6 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AADA5D161BA4936200C1377F /* Build configuration list for PBXNativeTarget "t6" */;
+			buildPhases = (
+				AADA5D0E1BA4936200C1377F /* Sources */,
+				AADA5D0F1BA4936200C1377F /* Frameworks */,
+				AADA5D101BA4936200C1377F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = t6;
+			productName = t6;
+			productReference = AADA5D121BA4936200C1377F /* t6 */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -353,6 +410,9 @@
 					AADA5CFD1BA4830600C1377F = {
 						CreatedOnToolsVersion = 6.4;
 					};
+					AADA5D111BA4936200C1377F = {
+						CreatedOnToolsVersion = 6.4;
+					};
 				};
 			};
 			buildConfigurationList = AA336BA21B983C2A0038B1C3 /* Build configuration list for PBXProject "Graphics" */;
@@ -372,6 +432,7 @@
 				AAB37A581B9AABB60085F48F /* t3 */,
 				AADA5CEB1BA1797700C1377F /* t4 */,
 				AADA5CFD1BA4830600C1377F /* t5 */,
+				AADA5D111BA4936200C1377F /* t6 */,
 			);
 		};
 /* End PBXProject section */
@@ -415,6 +476,15 @@
 			files = (
 				AADA5D011BA4830600C1377F /* main.cpp in Sources */,
 				AADA5D0D1BA4919700C1377F /* initShader.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AADA5D0E1BA4936200C1377F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AADA5D151BA4936200C1377F /* main.cpp in Sources */,
+				AADA5D191BA4936D00C1377F /* initShader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +766,36 @@
 			};
 			name = Release;
 		};
+		AADA5D171BA4936200C1377F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw3/3.1.1/lib,
+					/usr/local/Cellar/glew/1.12.0/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AADA5D181BA4936200C1377F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw3/3.1.1/lib,
+					/usr/local/Cellar/glew/1.12.0/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -748,6 +848,14 @@
 			buildConfigurations = (
 				AADA5D031BA4830600C1377F /* Debug */,
 				AADA5D041BA4830600C1377F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AADA5D161BA4936200C1377F /* Build configuration list for PBXNativeTarget "t6" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AADA5D171BA4936200C1377F /* Debug */,
+				AADA5D181BA4936200C1377F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
